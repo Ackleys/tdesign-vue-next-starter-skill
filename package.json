@@ -1,6 +1,6 @@
 {
   "name": "tdesign-vue-next-starter-skill",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Codex skill for TDesign Starter and TDesign Vue Next.",
   "license": "MIT",
   "author": "Ackleys",
@@ -13,7 +13,6 @@
     "bin",
     "skills",
     "README.md",
-    "README.zh-CN.md",
     "INSTALL.md",
     "INSTALL.zh-CN.md"
   ],
