@@ -34,9 +34,10 @@ When the user asks for latest behavior or a component API, browse official sourc
 ## Implementation Workflow
 
 1. Choose a path:
-   - Existing Starter app: add pages under `src/pages`, route records under `src/router`, service calls near existing API modules, and state in Pinia stores only when shared.
-   - Plain Vue 3 app: install and register `tdesign-vue-next`, import its CSS once, and add TDesign components incrementally.
-   - Backend repo without UI: scaffold a separate frontend package unless the backend already has a frontend build system.
+   - Existing Starter app: do not reinitialize or reinstall blindly. Reuse existing dependencies, global registration, CSS imports, router, layout, request wrapper, and Pinia stores; add pages under `src/pages`, route records under `src/router`, service calls near existing API modules, and state in Pinia stores only when shared.
+   - Fresh Starter app: verify current official Starter docs/package metadata, then initialize with `tdesign-starter-cli` / `td-starter init`, install dependencies with the detected package manager, configure env variables, and run the dev server before adding custom pages.
+   - Plain Vue 3 app: install `tdesign-vue-next` when missing, register components according to the project's import strategy, import TDesign CSS exactly once, add `tdesign-icons-vue-next` icon imports when needed, and add TDesign components incrementally.
+   - Backend repo without UI: scaffold a separate frontend package unless the backend already has a frontend build system; document the frontend path, package manager, dev command, and backend API base URL.
 2. Build the actual work surface first. For admin systems, prioritize dense, scannable operational views over marketing pages.
 3. Use TDesign primitives for controls: `t-table`, `t-form`, `t-input`, `t-select`, `t-button`, `t-dialog`, `t-drawer`, `t-tabs`, `t-card`, `t-space`, `t-pagination`, `t-tag`, `t-alert`, and `t-loading`.
 4. Use `tdesign-icons-vue-next` for icons instead of custom SVGs when an icon exists.
@@ -44,6 +45,16 @@ When the user asks for latest behavior or a component API, browse official sourc
 6. Add loading, empty, error, and permission-denied states for backend-driven pages.
 7. Route complex requirements such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and deep theming through `references/advanced-scenarios.md`.
 8. Validate with typecheck, lint, tests, build, and browser smoke checks when available.
+
+## Install And Initialization Rules
+
+- Before installing, inspect the lockfile and scripts to detect npm, pnpm, yarn, or bun. Use the existing package manager.
+- Do not run global installs unless the user approved them or the official Starter flow requires it for a fresh project.
+- For fresh Starter projects, use the official Starter flow from `references/starter.md`, then run the generated app before customizing it.
+- For existing Vue 3 apps, add only missing dependencies. Typical dependencies are `tdesign-vue-next`; icons come from `tdesign-icons-vue-next`, which is also a dependency of `tdesign-vue-next`, but explicit imports should still be verified in the installed package.
+- Ensure `import 'tdesign-vue-next/es/style/index.css';` or the project's established equivalent appears once at the app entry or UI plugin entry.
+- Register components using the project's existing strategy: full `app.use(TDesign)`, component-level `app.use(Button)`, auto-import plugin, or local imports. Do not mix strategies unnecessarily.
+- After setup, verify a minimal visible TDesign component renders before building larger pages.
 
 ## TDesign Starter Defaults To Respect
 

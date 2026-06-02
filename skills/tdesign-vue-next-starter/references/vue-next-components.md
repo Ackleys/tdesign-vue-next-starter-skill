@@ -36,6 +36,29 @@ app.mount('#app');
 
 In existing apps, inspect whether the project uses full import, on-demand import, auto-import plugins, or Starter defaults before changing registration.
 
+When `tdesign-vue-next` is missing from a Vue 3 app:
+
+1. Detect the package manager from `package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`, or `bun.lockb`.
+2. Install with the matching command, for example `npm install tdesign-vue-next`, `pnpm add tdesign-vue-next`, `yarn add tdesign-vue-next`, or `bun add tdesign-vue-next`.
+3. Verify Vue satisfies the peer dependency.
+4. Import TDesign CSS exactly once, usually in `src/main.ts`, `src/main.js`, or a local UI plugin file.
+5. Register components using the project's existing strategy.
+
+For full registration, use the package-level plugin only when it matches the app's style:
+
+```ts
+import { createApp } from 'vue';
+import TDesign from 'tdesign-vue-next';
+import 'tdesign-vue-next/es/style/index.css';
+import App from './App.vue';
+
+const app = createApp(App);
+app.use(TDesign);
+app.mount('#app');
+```
+
+For local or on-demand usage, import only the components needed and register them locally or through `app.use(Component)`, matching the existing codebase.
+
 ## Official Overview Component Index
 
 The official Vue Next overview routes currently include these component docs. Treat this as an index, not as a replacement for each component's API page:

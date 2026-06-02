@@ -9,6 +9,7 @@ Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue N
 ### 覆盖范围
 
 - TDesign Starter Vue Next 项目初始化与扩展
+- TDesign Vue Next 组件库安装、注册、样式导入和图标接入
 - 来自官网 overview 的 TDesign Vue Next 全量组件索引
 - 后端联动界面常见模式：CRUD 页面、请求封装、路由、权限、加载/空状态/错误状态
 - 复杂场景：大数据表格、远程 Select、动态表单、异步树、自定义上传、暗色模式、主题定制
@@ -59,6 +60,7 @@ Skill is valid!
 ### What It Covers
 
 - TDesign Starter Vue Next setup and project extension
+- TDesign Vue Next component installation, registration, style imports, and icon setup
 - Full TDesign Vue Next component index from the official overview
 - Backend-connected UI patterns for CRUD pages, request wrappers, routing, permissions, and loading/error states
 - Complex scenarios such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and theme customization

@@ -28,6 +28,20 @@ Use this only when the user wants a fresh Starter project and npm is available. 
 
 For new projects, prefer Node >=18 because current `tdesign-vue-next` package metadata is stricter than Starter docs.
 
+Before initializing:
+
+- Confirm the target directory and whether a frontend already exists.
+- Check Node version and prefer Node >=18 for new work.
+- Ask for approval before global installs when the environment requires it.
+- If the repo already uses pnpm, yarn, or bun, prefer that package manager after the Starter files are generated unless the generated project clearly pins npm.
+
+After initializing:
+
+- Install dependencies.
+- Start the dev server.
+- Confirm the default Starter page renders before adding backend-specific pages.
+- Configure `.env*` values such as `VITE_BASE_URL`, `VITE_IS_REQUEST_PROXY`, `VITE_API_URL`, and `VITE_API_URL_PREFIX` for the backend API instead of hard-coding URLs.
+
 ## Project Shape
 
 Starter docs describe a Vite-style project with:
