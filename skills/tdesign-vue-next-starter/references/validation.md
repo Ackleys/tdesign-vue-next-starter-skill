@@ -39,7 +39,7 @@ Report the score with evidence, not vibes.
 
 ## Completion Checklist
 
-- Official docs or local package types checked for nontrivial APIs.
+- Offline references and local package types checked for nontrivial APIs; official docs/MCP used only when local evidence is insufficient or freshness matters.
 - Existing TDesign Starter page templates and layout conventions were inspected and reused when the app is a Starter project.
 - TDesign CSS import is present exactly once.
 - Components use TDesign primitives and icons.

@@ -72,9 +72,9 @@ The official Vue Next overview routes currently include these component docs. Tr
 - Data organization: `collapse`, `dropdown`, `pagination`, `swiper`, `tree`
 - Global configuration and assets: `config-provider`, `icon`
 
-When a user asks for a component not listed here, re-check the official overview and installed package before assuming it is unsupported.
+When a user asks for a component not listed here, check installed package files/types first. Re-check the official overview or MCP only when local package metadata is absent, stale, or contradicts the request.
 
-If official TDesign MCP is configured, prefer `get-component-list` for availability checks and `get-component-docs` for exact props, events, slots, and examples before implementing unfamiliar component APIs.
+If official TDesign MCP is configured, prefer `get-component-list` for availability checks and `get-component-docs` for exact props, events, slots, and examples only when the offline reference and local package files do not answer the question.
 
 ## Component Selection
 
@@ -87,7 +87,7 @@ Prefer TDesign components for standard admin UI:
 - Layout and navigation: `t-layout`, `t-header`, `t-aside`, `t-content`, `t-card`, `t-space`, `t-tabs`, `t-breadcrumb`, `t-menu`, `t-steps`
 - Media and utility: `t-image`, `t-image-viewer`, `t-avatar`, `t-badge`, `t-tooltip`, `t-watermark`, `t-qrcode`
 
-Verify exact prop names in docs or installed type declarations before using uncommon APIs.
+Verify exact prop names in installed type declarations first, then docs or MCP if needed, before using uncommon APIs.
 
 ## Icons
 
@@ -108,7 +108,7 @@ import { SearchIcon, AddIcon } from 'tdesign-icons-vue-next';
 </template>
 ```
 
-Check actual icon export names in package types or docs when uncertain.
+Check actual icon export names in package types first, then docs or MCP when uncertain.
 
 ## Page Composition
 

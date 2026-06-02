@@ -1,6 +1,6 @@
 # TDesign MCP Reference
 
-Use this when the task needs accurate component docs, API details, DOM structure, component availability, changelog checks, code generation context, migration help, or version-upgrade guidance.
+Use this when offline references and local package files are insufficient for accurate component docs, API details, DOM structure, component availability, changelog checks, code generation context, migration help, or version-upgrade guidance.
 
 ## Official Sources Checked
 
@@ -49,16 +49,17 @@ The official repository notes that changelog support is not available for some f
 
 ## How Codex Should Use It
 
-When MCP tools are available in the current Codex session:
+When MCP tools are available in the current Codex session and extra accuracy is needed:
 
-1. Use `get-component-list` before claiming a component is unsupported.
-2. Use `get-component-docs` before using unfamiliar props, events, slots, plugin APIs, or advanced examples.
+1. Use `get-component-list` before claiming a component is unsupported if the local package and offline component index are inconclusive.
+2. Use `get-component-docs` before using unfamiliar props, events, slots, plugin APIs, or advanced examples that are not covered by local type declarations or offline references.
 3. Use `get-component-dom` when writing CSS that depends on TDesign internals or when troubleshooting layout/DOM mismatches.
 4. Use `get-component-changelog` before upgrading `tdesign-vue-next` or explaining version-specific behavior.
 5. Combine MCP results with local package types and the project's installed version; do not assume `latest` docs exactly match a pinned local dependency.
 
 When MCP tools are not configured:
 
-- Mention that the official TDesign MCP exists and can improve API accuracy.
-- Fall back to official docs, local package metadata, installed type declarations, and examples.
+- Do not block implementation only because MCP is unavailable.
+- Fall back to offline references, local package metadata, installed type declarations, and examples.
+- Mention that the official TDesign MCP exists only when the task would materially benefit from more precise component API or changelog context.
 - Do not fabricate MCP output.

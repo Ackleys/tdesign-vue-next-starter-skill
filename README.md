@@ -4,6 +4,10 @@
 
 Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue Next.
 
+默认优先使用内置离线 references 和本地项目文件；只有在需要最新 API、版本差异、MCP 精确组件上下文或本地资料不足时才查询网络。
+
+By default, the skill uses bundled offline references and local project files first. Network docs or MCP are reserved for latest APIs, version differences, precise component context, or missing local evidence.
+
 ## 中文说明
 
 ### 覆盖范围
@@ -13,6 +17,7 @@ Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue N
 - TDesign Starter 官方开发规范、`src/apis` 请求层、`src/router/modules` 路由菜单、个性化布局配置和静态资源规范
 - TDesign Vue Next 组件库安装、注册、样式导入和图标接入
 - TDesign 官方 MCP 接入和组件 API 查询流程
+- 离线优先、本地项目优先的资料使用策略
 - 来自官网 overview 的 TDesign Vue Next 全量组件索引
 - 后端联动界面常见模式：CRUD 页面、请求封装、路由、权限、加载/空状态/错误状态
 - 复杂场景：大数据表格、远程 Select、动态表单、异步树、自定义上传、暗色模式、主题定制
@@ -69,6 +74,7 @@ Skill is valid!
 - Official Starter development rules, `src/apis` request layer, `src/router/modules` route/menu config, personalized layout settings, and asset conventions
 - TDesign Vue Next component installation, registration, style imports, and icon setup
 - Official TDesign MCP setup and component API lookup workflow
+- Offline-first, local-project-first source strategy
 - Full TDesign Vue Next component index from the official overview
 - Backend-connected UI patterns for CRUD pages, request wrappers, routing, permissions, and loading/error states
 - Complex scenarios such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and theme customization

@@ -5,20 +5,20 @@ description: Build, scaffold, modify, debug, and review Vue 3 interfaces that us
 
 # TDesign Vue Next Starter
 
-Use this skill to build or modify Vue 3 admin UIs with TDesign Starter and TDesign Vue Next. Base decisions on current official docs and installed package metadata, not memory.
+Use this skill to build or modify Vue 3 admin UIs with TDesign Starter and TDesign Vue Next. Default to local project files and this skill's offline references. Use network docs or MCP only when freshness or missing API detail actually matters.
 
 ## First Steps
 
 1. Identify whether the project is a TDesign Starter app, a plain Vue 3 app, or a backend repo that needs a new UI.
 2. If it is a Starter app, inspect existing Starter page templates, layouts, route modules, menu metadata, permission stores, `src/apis`, request utilities, and page containers before designing anything new.
 3. Inspect `package.json`, `vite.config.*`, `src/main.*`, `src/router`, `src/pages`, `src/layouts`, `src/store`, and request utilities before changing code.
-4. Verify current TDesign docs or package metadata when versions, APIs, CLI commands, component props, or permissions matter.
+4. Use the offline references in this skill and installed local package metadata/types before browsing.
 5. Prefer local Starter conventions and page templates over generic examples.
 6. Use TypeScript and Vue 3 Composition API patterns unless the project already uses a different style.
 
-## Official Sources
+## Knowledge Source Priority
 
-Read the relevant reference before implementation:
+Read the relevant offline reference before implementation:
 
 - Starter setup and development workflow: `references/starter.md`
 - Component library usage, import styles, and UI implementation rules: `references/vue-next-components.md`
@@ -27,7 +27,22 @@ Read the relevant reference before implementation:
 - Complex scenarios and pre-flight checks: `references/advanced-scenarios.md`
 - Validation checklist and scoring rubric: `references/validation.md`
 
-When the user asks for latest behavior or a component API, browse official sources:
+Prefer this order:
+
+1. Existing project files and conventions.
+2. This skill's offline references.
+3. Installed local package files, type declarations, examples, and `package.json`.
+4. Configured TDesign MCP tools.
+5. Official websites and npm metadata.
+
+Only browse or call remote MCP when one of these is true:
+
+- The user explicitly asks for latest/current behavior.
+- A component, prop, event, slot, CLI command, or permission behavior is absent from offline references and local package files.
+- The task is a version upgrade, changelog check, migration, or compatibility question.
+- The installed project version differs from the reference version and the difference affects implementation.
+
+Use these official sources for freshness checks:
 
 - TDesign Starter Vue Next docs: https://tdesign.tencent.com/starter/docs/vue-next/get-started
 - TDesign Vue Next docs: https://tdesign.tencent.com/vue-next/overview
@@ -39,15 +54,15 @@ When the user asks for latest behavior or a component API, browse official sourc
 
 1. Choose a path:
    - Existing Starter app: do not reinitialize or reinstall blindly. Reuse existing dependencies, global registration, CSS imports, router, layout, request wrapper, `src/apis`, and Pinia stores; add pages under `src/pages`, route records under `src/router/modules`, API functions under `src/apis`, and state in Pinia stores only when shared.
-   - Fresh Starter app: verify current official Starter docs/package metadata, then initialize with `tdesign-starter-cli` / `td-starter init`, install dependencies with the detected package manager, configure env variables, and run the dev server before adding custom pages.
+   - Fresh Starter app: use the offline Starter flow first; verify current official Starter docs/package metadata only when the CLI/package version may affect initialization. Initialize with `tdesign-starter-cli` / `td-starter init`, install dependencies with the detected package manager, configure env variables, and run the dev server before adding custom pages.
    - Plain Vue 3 app: install `tdesign-vue-next` when missing, register components according to the project's import strategy, import TDesign CSS exactly once, add `tdesign-icons-vue-next` icon imports when needed, and add TDesign components incrementally.
    - Backend repo without UI: scaffold a separate frontend package unless the backend already has a frontend build system; document the frontend path, package manager, dev command, and backend API base URL.
 2. In Starter apps, build from Starter page templates and layout shells first. Reuse existing list pages, form pages, detail pages, dashboard blocks, breadcrumb/menu metadata, tabs, route authority, and page container spacing before composing raw TDesign components.
 3. Build the actual work surface first. For admin systems, prioritize dense, scannable operational views over marketing pages.
 4. Use TDesign primitives for controls: `t-table`, `t-form`, `t-input`, `t-select`, `t-button`, `t-dialog`, `t-drawer`, `t-tabs`, `t-card`, `t-space`, `t-pagination`, `t-tag`, `t-alert`, and `t-loading`.
 5. Use `tdesign-icons-vue-next` for icons instead of custom SVGs when an icon exists.
-6. When official TDesign MCP is configured, use it before guessing component APIs, available components, DOM structure, or changelog details. See `references/mcp.md`.
-7. Keep data flow explicit: pages call service modules, services call the project request wrapper, stores hold cross-page state, and components receive props/emits.
+6. When official TDesign MCP is configured, use it for missing or version-sensitive component APIs, available components, DOM structure, or changelog details. See `references/mcp.md`.
+7. Keep data flow explicit: Starter pages call `src/apis`, API modules call `src/utils/request`, stores hold cross-page state, and components receive props/emits. In non-Starter apps, use the local service-module convention.
 8. Add loading, empty, error, and permission-denied states for backend-driven pages.
 9. Route complex requirements such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and deep theming through `references/advanced-scenarios.md`.
 10. Validate with typecheck, lint, tests, build, and browser smoke checks when available.

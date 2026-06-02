@@ -1,6 +1,6 @@
 # Advanced Scenarios
 
-Use this when requirements go beyond simple component placement. Verify exact props, events, and types in official docs or installed type declarations before implementation.
+Use this when requirements go beyond simple component placement. Verify exact props, events, and types in installed type declarations first; use official docs or MCP only when local files are missing, stale, or insufficient.
 
 ## Scenario Routing
 
@@ -36,4 +36,4 @@ Before choosing components for a nontrivial page, determine:
 
 ## Chat Caveat
 
-Do not assume AI chat components are part of `tdesign-vue-next` just because TDesign Mini Program or other TDesign packages mention chat. The official Vue Next overview component index checked for this skill does not list a chat component. If a user asks for TDesign Chat in Vue, verify the current official package and docs first.
+Do not assume AI chat components are part of `tdesign-vue-next` just because TDesign Mini Program or other TDesign packages mention chat. The official Vue Next overview component index checked for this skill does not list a chat component. If a user asks for TDesign Chat in Vue, check the installed package first, then verify current official package/docs or MCP if needed.
