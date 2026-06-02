@@ -26,28 +26,13 @@ The component index was cross-checked against both the official Vue Next overvie
 
 See [INSTALL.md](INSTALL.md) for full install, update, validation, and uninstall steps.
 
-Install with npx from GitHub:
-
-```bash
-npx github:Ackleys/tdesign-vue-next-starter-skill
-```
-
-After the package is published to npm, this shorter form will also work:
+Install with npx:
 
 ```bash
 npx tdesign-vue-next-starter-skill
 ```
 
-Quick install:
-
-```bash
-git clone https://github.com/Ackleys/tdesign-vue-next-starter-skill.git
-cd tdesign-vue-next-starter-skill
-mkdir -p ~/.codex/skills
-cp -R skills/tdesign-vue-next-starter ~/.codex/skills/
-```
-
-Restart Codex so the renamed skill is discovered.
+This installs the bundled `tdesign-vue-next-starter` skill into your Codex skills directory. Restart Codex after installing, then ask Codex to use `$tdesign-vue-next-starter`.
 
 ## Use
 

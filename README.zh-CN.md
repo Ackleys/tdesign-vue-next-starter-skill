@@ -24,28 +24,13 @@
 
 完整安装、更新、校验和卸载步骤见 [INSTALL.zh-CN.md](INSTALL.zh-CN.md)。
 
-通过 GitHub 使用 npx 安装：
-
-```bash
-npx github:Ackleys/tdesign-vue-next-starter-skill
-```
-
-发布到 npm 后，也可以使用更短的命令：
+使用 npx 安装：
 
 ```bash
 npx tdesign-vue-next-starter-skill
 ```
 
-快速安装：
-
-```bash
-git clone https://github.com/Ackleys/tdesign-vue-next-starter-skill.git
-cd tdesign-vue-next-starter-skill
-mkdir -p ~/.codex/skills
-cp -R skills/tdesign-vue-next-starter ~/.codex/skills/
-```
-
-然后重启 Codex，让新命名的 skill 被发现。
+这个命令会把内置的 `tdesign-vue-next-starter` skill 安装到 Codex 的 skills 目录。安装后重启 Codex，然后就可以让 Codex 使用 `$tdesign-vue-next-starter`。
 
 ## 使用方式
 

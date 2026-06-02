@@ -37,11 +37,13 @@ npx github:Ackleys/tdesign-vue-next-starter-skill --force
 
 ## 通过 npm 使用 npx 安装
 
-发布到 npm 后，可以使用：
+使用 npx 从 npm 安装：
 
 ```bash
 npx tdesign-vue-next-starter-skill
 ```
+
+这个命令会把内置的 `tdesign-vue-next-starter` skill 复制到 Codex 的 skills 目录。重启 Codex 后，这个 skill 会帮助 Codex 基于 TDesign Starter、TDesign Vue Next 组件、后端路由、请求封装、权限、表单、表格和校验流程来构建或修改 Vue 3 界面。
 
 如果 skill 已经存在并且需要覆盖：
 
@@ -88,7 +90,7 @@ $tdesign-vue-next-starter
 示例：
 
 ```text
-Use $tdesign-vue-next-starter to build a Vue 3 backend user-management page with TDesign Starter.
+使用 $tdesign-vue-next-starter 帮我基于 TDesign Starter 构建一个 Vue 3 后台用户管理页面。
 ```
 
 ## 更新

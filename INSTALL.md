@@ -37,11 +37,13 @@ Restart Codex after installing.
 
 ## Install With npx From npm
 
-After the package is published to npm, install the skill with:
+Use npx to install the skill from npm:
 
 ```bash
 npx tdesign-vue-next-starter-skill
 ```
+
+This command copies the bundled `tdesign-vue-next-starter` skill into your Codex skills directory. After restarting Codex, the skill helps Codex build and modify Vue 3 interfaces with TDesign Starter, TDesign Vue Next components, backend-connected routes, request wrappers, permissions, forms, tables, and validation workflows.
 
 If the skill already exists and you want to replace it:
 
