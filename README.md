@@ -24,9 +24,13 @@ The component index was cross-checked against both the official Vue Next overvie
 
 ## Install Locally
 
-Copy or symlink the skill folder into your Codex skills directory:
+See [INSTALL.md](INSTALL.md) for full install, update, validation, and uninstall steps.
+
+Quick install:
 
 ```bash
+git clone https://github.com/Ackleys/tdesign-vue-next-starter-skill.git
+cd tdesign-vue-next-starter-skill
 mkdir -p ~/.codex/skills
 cp -R skills/tdesign-vue-next-starter ~/.codex/skills/
 ```

@@ -22,9 +22,13 @@
 
 ## 本地安装
 
-将 skill 目录复制或软链接到 Codex skills 目录：
+完整安装、更新、校验和卸载步骤见 [INSTALL.zh-CN.md](INSTALL.zh-CN.md)。
+
+快速安装：
 
 ```bash
+git clone https://github.com/Ackleys/tdesign-vue-next-starter-skill.git
+cd tdesign-vue-next-starter-skill
 mkdir -p ~/.codex/skills
 cp -R skills/tdesign-vue-next-starter ~/.codex/skills/
 ```
