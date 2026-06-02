@@ -1,0 +1,4 @@
+interface:
+  display_name: "TDesign Vue Next Starter"
+  short_description: "Build Vue 3 UIs with TDesign Starter"
+  default_prompt: "Use $tdesign-vue-next-starter to build or modify a Vue 3 interface with TDesign Starter and TDesign Vue Next."
