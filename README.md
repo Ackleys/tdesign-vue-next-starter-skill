@@ -10,6 +10,7 @@ Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue N
 
 - TDesign Starter Vue Next 项目初始化与扩展
 - TDesign Starter 页面模板、后台布局、路由权限和菜单/面包屑约定
+- TDesign Starter 官方开发规范、`src/apis` 请求层、`src/router/modules` 路由菜单、个性化布局配置和静态资源规范
 - TDesign Vue Next 组件库安装、注册、样式导入和图标接入
 - TDesign 官方 MCP 接入和组件 API 查询流程
 - 来自官网 overview 的 TDesign Vue Next 全量组件索引
@@ -65,6 +66,7 @@ Skill is valid!
 
 - TDesign Starter Vue Next setup and project extension
 - TDesign Starter page templates, admin layouts, route permissions, menu and breadcrumb conventions
+- Official Starter development rules, `src/apis` request layer, `src/router/modules` route/menu config, personalized layout settings, and asset conventions
 - TDesign Vue Next component installation, registration, style imports, and icon setup
 - Official TDesign MCP setup and component API lookup workflow
 - Full TDesign Vue Next component index from the official overview

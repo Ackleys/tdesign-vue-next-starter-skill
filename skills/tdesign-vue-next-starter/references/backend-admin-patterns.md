@@ -7,14 +7,15 @@ Use this when the TDesign UI is a frontend for a backend service.
 Keep boundaries simple:
 
 - Page components own route query, table/form state, and user interactions.
-- API/service modules own endpoint paths and request payload mapping.
+- In Starter projects, `src/apis` modules own endpoint paths and request payload mapping.
+- In non-Starter projects, use the local API/service module convention.
 - The request wrapper owns base URL, auth headers, interceptors, and error normalization.
 - Pinia stores own cross-page user, permission, layout, or cached reference data.
 - Reusable components own isolated widgets such as status tags, user selectors, and form sections.
 
 ## API Integration
 
-Use the project's request utility, usually under `src/utils/request` in Starter projects. Avoid direct `fetch` or raw axios in pages unless the existing app already does that.
+Use the project's request utility, usually under `src/utils/request` in Starter projects. Define backend endpoints under `src/apis` in Starter projects. Avoid direct `fetch` or raw axios in pages unless the existing app already does that.
 
 For list pages, model these states:
 
@@ -53,7 +54,7 @@ Use this structure for common admin resources:
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue';
 import { MessagePlugin } from 'tdesign-vue-next';
-import { fetchItems, createItem, updateItem, deleteItem } from '@/api/items';
+import { fetchItems, createItem, updateItem, deleteItem } from '@/apis/items';
 
 const loading = ref(false);
 const rows = ref([]);

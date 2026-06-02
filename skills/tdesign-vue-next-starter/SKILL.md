@@ -10,7 +10,7 @@ Use this skill to build or modify Vue 3 admin UIs with TDesign Starter and TDesi
 ## First Steps
 
 1. Identify whether the project is a TDesign Starter app, a plain Vue 3 app, or a backend repo that needs a new UI.
-2. If it is a Starter app, inspect existing Starter page templates, layouts, route modules, menu metadata, permission wrappers, request modules, and page containers before designing anything new.
+2. If it is a Starter app, inspect existing Starter page templates, layouts, route modules, menu metadata, permission stores, `src/apis`, request utilities, and page containers before designing anything new.
 3. Inspect `package.json`, `vite.config.*`, `src/main.*`, `src/router`, `src/pages`, `src/layouts`, `src/store`, and request utilities before changing code.
 4. Verify current TDesign docs or package metadata when versions, APIs, CLI commands, component props, or permissions matter.
 5. Prefer local Starter conventions and page templates over generic examples.
@@ -38,7 +38,7 @@ When the user asks for latest behavior or a component API, browse official sourc
 ## Implementation Workflow
 
 1. Choose a path:
-   - Existing Starter app: do not reinitialize or reinstall blindly. Reuse existing dependencies, global registration, CSS imports, router, layout, request wrapper, and Pinia stores; add pages under `src/pages`, route records under `src/router`, service calls near existing API modules, and state in Pinia stores only when shared.
+   - Existing Starter app: do not reinitialize or reinstall blindly. Reuse existing dependencies, global registration, CSS imports, router, layout, request wrapper, `src/apis`, and Pinia stores; add pages under `src/pages`, route records under `src/router/modules`, API functions under `src/apis`, and state in Pinia stores only when shared.
    - Fresh Starter app: verify current official Starter docs/package metadata, then initialize with `tdesign-starter-cli` / `td-starter init`, install dependencies with the detected package manager, configure env variables, and run the dev server before adding custom pages.
    - Plain Vue 3 app: install `tdesign-vue-next` when missing, register components according to the project's import strategy, import TDesign CSS exactly once, add `tdesign-icons-vue-next` icon imports when needed, and add TDesign components incrementally.
    - Backend repo without UI: scaffold a separate frontend package unless the backend already has a frontend build system; document the frontend path, package manager, dev command, and backend API base URL.
@@ -56,7 +56,7 @@ When the user asks for latest behavior or a component API, browse official sourc
 
 - The purpose of this skill is Starter-first backend UI work, not generic component demos. In a Starter project, treat the Starter layout and page templates as the default foundation.
 - Before creating a page from scratch, search `src/pages`, route modules, layout components, and menu config for a similar Starter page: table list, advanced table, form, detail, dashboard, login, result, or settings page.
-- Preserve the Starter shell: side menu, top header, breadcrumb, tab/workspace behavior, content padding, route metadata, permission authority, and request/error conventions.
+- Preserve the Starter shell: side menu, top header, breadcrumb, tab/workspace behavior, content padding, route metadata, backend-permission menu behavior, and request/error conventions.
 - For CRUD pages, adapt the closest Starter list/table template, then add backend filters, toolbar actions, pagination, dialogs/drawers, and mutation states.
 - For long forms or detail flows, adapt Starter form/detail templates and route patterns instead of forcing everything into a modal.
 - Only compose raw TDesign components without a Starter template when the app is not a Starter app, the existing Starter project has no relevant template, or the user explicitly asks for a standalone component.
@@ -78,8 +78,9 @@ When the user asks for latest behavior or a component API, browse official sourc
 - Starter docs describe `tdesign-starter-cli` and `td-starter init` for initialization.
 - Starter docs mention Node 16+ for starter initialization, while current `tdesign-vue-next@1.20.0` package metadata requires Node >=18. Prefer the stricter version for new projects unless a pinned package proves otherwise.
 - Starter has environment variables such as `VITE_BASE_URL`, `VITE_IS_REQUEST_PROXY`, `VITE_API_URL`, and `VITE_API_URL_PREFIX`.
-- New pages conventionally live under `src/pages`.
-- Starter page work should preserve the existing layout shell, route metadata, permissions, menu/breadcrumb behavior, request wrapper, and page spacing conventions.
+- Official Starter docs describe `src/apis` for API definitions, `src/utils/request` for request wrapping, `src/router/modules` for route/menu modules, `src/layouts` for layout shells, `src/config/style.ts` for layout preferences, and `src/style/variables.less` for template style tokens.
+- New pages conventionally live under `src/pages`; page-specific children and constants should stay near that page, following existing Starter examples.
+- Starter page work should preserve the existing layout shell, route metadata, backend permission/menu behavior, menu/breadcrumb behavior, request wrapper, and page spacing conventions.
 
 ## Avoid
 

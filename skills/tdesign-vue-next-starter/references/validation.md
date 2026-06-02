@@ -43,7 +43,8 @@ Report the score with evidence, not vibes.
 - Existing TDesign Starter page templates and layout conventions were inspected and reused when the app is a Starter project.
 - TDesign CSS import is present exactly once.
 - Components use TDesign primitives and icons.
-- Backend calls go through the request wrapper.
+- In Starter projects, backend calls are defined under `src/apis` and go through `src/utils/request`.
 - Loading, empty, error, and mutation pending states exist.
-- Routes and permissions match local conventions.
+- Routes live under the local Starter route module pattern, usually `src/router/modules`, and permissions match backend-permission or frontend-permission mode.
+- Layout config, menu, breadcrumb, tab behavior, and page spacing match Starter conventions.
 - Build/type/lint/test/browser checks were run or limitations are stated.
