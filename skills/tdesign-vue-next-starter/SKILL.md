@@ -10,10 +10,11 @@ Use this skill to build or modify Vue 3 admin UIs with TDesign Starter and TDesi
 ## First Steps
 
 1. Identify whether the project is a TDesign Starter app, a plain Vue 3 app, or a backend repo that needs a new UI.
-2. Inspect `package.json`, `vite.config.*`, `src/main.*`, `src/router`, `src/pages`, `src/layouts`, `src/store`, and request utilities before changing code.
-3. Verify current TDesign docs or package metadata when versions, APIs, CLI commands, component props, or permissions matter.
-4. Prefer local project conventions over generic examples.
-5. Use TypeScript and Vue 3 Composition API patterns unless the project already uses a different style.
+2. If it is a Starter app, inspect existing Starter page templates, layouts, route modules, menu metadata, permission wrappers, request modules, and page containers before designing anything new.
+3. Inspect `package.json`, `vite.config.*`, `src/main.*`, `src/router`, `src/pages`, `src/layouts`, `src/store`, and request utilities before changing code.
+4. Verify current TDesign docs or package metadata when versions, APIs, CLI commands, component props, or permissions matter.
+5. Prefer local Starter conventions and page templates over generic examples.
+6. Use TypeScript and Vue 3 Composition API patterns unless the project already uses a different style.
 
 ## Official Sources
 
@@ -41,14 +42,25 @@ When the user asks for latest behavior or a component API, browse official sourc
    - Fresh Starter app: verify current official Starter docs/package metadata, then initialize with `tdesign-starter-cli` / `td-starter init`, install dependencies with the detected package manager, configure env variables, and run the dev server before adding custom pages.
    - Plain Vue 3 app: install `tdesign-vue-next` when missing, register components according to the project's import strategy, import TDesign CSS exactly once, add `tdesign-icons-vue-next` icon imports when needed, and add TDesign components incrementally.
    - Backend repo without UI: scaffold a separate frontend package unless the backend already has a frontend build system; document the frontend path, package manager, dev command, and backend API base URL.
-2. Build the actual work surface first. For admin systems, prioritize dense, scannable operational views over marketing pages.
-3. Use TDesign primitives for controls: `t-table`, `t-form`, `t-input`, `t-select`, `t-button`, `t-dialog`, `t-drawer`, `t-tabs`, `t-card`, `t-space`, `t-pagination`, `t-tag`, `t-alert`, and `t-loading`.
-4. Use `tdesign-icons-vue-next` for icons instead of custom SVGs when an icon exists.
-5. When official TDesign MCP is configured, use it before guessing component APIs, available components, DOM structure, or changelog details. See `references/mcp.md`.
-6. Keep data flow explicit: pages call service modules, services call the project request wrapper, stores hold cross-page state, and components receive props/emits.
-7. Add loading, empty, error, and permission-denied states for backend-driven pages.
-8. Route complex requirements such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and deep theming through `references/advanced-scenarios.md`.
-9. Validate with typecheck, lint, tests, build, and browser smoke checks when available.
+2. In Starter apps, build from Starter page templates and layout shells first. Reuse existing list pages, form pages, detail pages, dashboard blocks, breadcrumb/menu metadata, tabs, route authority, and page container spacing before composing raw TDesign components.
+3. Build the actual work surface first. For admin systems, prioritize dense, scannable operational views over marketing pages.
+4. Use TDesign primitives for controls: `t-table`, `t-form`, `t-input`, `t-select`, `t-button`, `t-dialog`, `t-drawer`, `t-tabs`, `t-card`, `t-space`, `t-pagination`, `t-tag`, `t-alert`, and `t-loading`.
+5. Use `tdesign-icons-vue-next` for icons instead of custom SVGs when an icon exists.
+6. When official TDesign MCP is configured, use it before guessing component APIs, available components, DOM structure, or changelog details. See `references/mcp.md`.
+7. Keep data flow explicit: pages call service modules, services call the project request wrapper, stores hold cross-page state, and components receive props/emits.
+8. Add loading, empty, error, and permission-denied states for backend-driven pages.
+9. Route complex requirements such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and deep theming through `references/advanced-scenarios.md`.
+10. Validate with typecheck, lint, tests, build, and browser smoke checks when available.
+
+## Starter Page Template Rules
+
+- The purpose of this skill is Starter-first backend UI work, not generic component demos. In a Starter project, treat the Starter layout and page templates as the default foundation.
+- Before creating a page from scratch, search `src/pages`, route modules, layout components, and menu config for a similar Starter page: table list, advanced table, form, detail, dashboard, login, result, or settings page.
+- Preserve the Starter shell: side menu, top header, breadcrumb, tab/workspace behavior, content padding, route metadata, permission authority, and request/error conventions.
+- For CRUD pages, adapt the closest Starter list/table template, then add backend filters, toolbar actions, pagination, dialogs/drawers, and mutation states.
+- For long forms or detail flows, adapt Starter form/detail templates and route patterns instead of forcing everything into a modal.
+- Only compose raw TDesign components without a Starter template when the app is not a Starter app, the existing Starter project has no relevant template, or the user explicitly asks for a standalone component.
+- If a generated page visually ignores the Starter shell or looks like a standalone demo page, treat that as a failed use of this skill.
 
 ## Install And Initialization Rules
 
@@ -67,6 +79,7 @@ When the user asks for latest behavior or a component API, browse official sourc
 - Starter docs mention Node 16+ for starter initialization, while current `tdesign-vue-next@1.20.0` package metadata requires Node >=18. Prefer the stricter version for new projects unless a pinned package proves otherwise.
 - Starter has environment variables such as `VITE_BASE_URL`, `VITE_IS_REQUEST_PROXY`, `VITE_API_URL`, and `VITE_API_URL_PREFIX`.
 - New pages conventionally live under `src/pages`.
+- Starter page work should preserve the existing layout shell, route metadata, permissions, menu/breadcrumb behavior, request wrapper, and page spacing conventions.
 
 ## Avoid
 
@@ -75,3 +88,4 @@ When the user asks for latest behavior or a component API, browse official sourc
 - Do not replace Starter routing, layout, request, or permission systems unless the user asks for architectural change.
 - Do not mix another UI library into a TDesign page for basic controls.
 - Do not add large custom CSS systems where TDesign tokens, layout components, or local style conventions are enough.
+- Do not build generic TDesign demo pages inside a Starter app when an existing Starter page template or layout pattern can be adapted.

@@ -83,6 +83,14 @@ When wiring a backend, prefer using existing env variables and request wrappers 
 
 Follow the existing route/page pattern. Starter docs describe creating page folders under `src/pages`; inspect route files before adding records.
 
+Starter page template priority:
+
+- Search existing `src/pages` before designing a new page structure.
+- Prefer adapting a similar Starter page template for table lists, advanced tables, forms, detail pages, dashboards, login/result/settings screens, and backend CRUD views.
+- Preserve the Starter layout shell, including menu, header, breadcrumb, tab/workspace behavior if present, content padding, route metadata, and permission authority.
+- Keep API calls through the Starter request wrapper and mirror existing loading, empty, error, and mutation feedback states.
+- Use raw TDesign components to fill the template, not to replace the template.
+
 For backend admin pages, include:
 
 - route metadata for title, icon, hidden state, and authority if the project uses it
