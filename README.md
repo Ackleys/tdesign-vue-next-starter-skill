@@ -26,6 +26,18 @@ The component index was cross-checked against both the official Vue Next overvie
 
 See [INSTALL.md](INSTALL.md) for full install, update, validation, and uninstall steps.
 
+Install with npx from GitHub:
+
+```bash
+npx github:Ackleys/tdesign-vue-next-starter-skill
+```
+
+After the package is published to npm, this shorter form will also work:
+
+```bash
+npx tdesign-vue-next-starter-skill
+```
+
 Quick install:
 
 ```bash

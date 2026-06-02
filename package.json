@@ -1,0 +1,43 @@
+{
+  "name": "tdesign-vue-next-starter-skill",
+  "version": "1.0.0",
+  "description": "Codex skill for TDesign Starter and TDesign Vue Next.",
+  "license": "MIT",
+  "author": "Ackleys",
+  "type": "commonjs",
+  "bin": {
+    "tdesign-vue-next-starter-skill": "bin/install.js",
+    "install-tdesign-vue-next-starter-skill": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "README.md",
+    "README.zh-CN.md",
+    "INSTALL.md",
+    "INSTALL.zh-CN.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ackleys/tdesign-vue-next-starter-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ackleys/tdesign-vue-next-starter-skill/issues"
+  },
+  "homepage": "https://github.com/Ackleys/tdesign-vue-next-starter-skill#readme",
+  "keywords": [
+    "codex",
+    "skill",
+    "tdesign",
+    "tdesign-vue-next",
+    "tdesign-starter",
+    "vue3"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "install-skill": "node bin/install.js",
+    "check": "node bin/install.js --dry-run"
+  }
+}

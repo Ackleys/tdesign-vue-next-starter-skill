@@ -19,6 +19,38 @@ cp -R skills/tdesign-vue-next-starter ~/.codex/skills/
 
 Restart Codex after copying the skill so it can be discovered.
 
+## Install With npx From GitHub
+
+This works without publishing to npm:
+
+```bash
+npx github:Ackleys/tdesign-vue-next-starter-skill
+```
+
+If the skill already exists and you want to replace it:
+
+```bash
+npx github:Ackleys/tdesign-vue-next-starter-skill --force
+```
+
+Restart Codex after installing.
+
+## Install With npx From npm
+
+After the package is published to npm, install the skill with:
+
+```bash
+npx tdesign-vue-next-starter-skill
+```
+
+If the skill already exists and you want to replace it:
+
+```bash
+npx tdesign-vue-next-starter-skill --force
+```
+
+Restart Codex after installing.
+
 ## Install With A Symlink
 
 Use this if you want updates in the cloned repository to be reflected immediately:

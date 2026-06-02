@@ -24,6 +24,18 @@
 
 完整安装、更新、校验和卸载步骤见 [INSTALL.zh-CN.md](INSTALL.zh-CN.md)。
 
+通过 GitHub 使用 npx 安装：
+
+```bash
+npx github:Ackleys/tdesign-vue-next-starter-skill
+```
+
+发布到 npm 后，也可以使用更短的命令：
+
+```bash
+npx tdesign-vue-next-starter-skill
+```
+
 快速安装：
 
 ```bash

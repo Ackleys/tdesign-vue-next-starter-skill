@@ -19,6 +19,38 @@ cp -R skills/tdesign-vue-next-starter ~/.codex/skills/
 
 复制完成后重启 Codex，让 skill 被重新发现。
 
+## 通过 GitHub 使用 npx 安装
+
+这种方式不需要先发布到 npm：
+
+```bash
+npx github:Ackleys/tdesign-vue-next-starter-skill
+```
+
+如果 skill 已经存在并且需要覆盖：
+
+```bash
+npx github:Ackleys/tdesign-vue-next-starter-skill --force
+```
+
+安装后重启 Codex。
+
+## 通过 npm 使用 npx 安装
+
+发布到 npm 后，可以使用：
+
+```bash
+npx tdesign-vue-next-starter-skill
+```
+
+如果 skill 已经存在并且需要覆盖：
+
+```bash
+npx tdesign-vue-next-starter-skill --force
+```
+
+安装后重启 Codex。
+
 ## 使用软链接安装
 
 如果你希望仓库更新后 skill 内容也立即同步，可以使用软链接：
