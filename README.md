@@ -10,6 +10,7 @@ Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue N
 
 - TDesign Starter Vue Next 项目初始化与扩展
 - TDesign Vue Next 组件库安装、注册、样式导入和图标接入
+- TDesign 官方 MCP 接入和组件 API 查询流程
 - 来自官网 overview 的 TDesign Vue Next 全量组件索引
 - 后端联动界面常见模式：CRUD 页面、请求封装、路由、权限、加载/空状态/错误状态
 - 复杂场景：大数据表格、远程 Select、动态表单、异步树、自定义上传、暗色模式、主题定制
@@ -21,6 +22,8 @@ Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue N
 
 - TDesign Starter Vue Next 文档：<https://tdesign.tencent.com/starter/docs/vue-next/get-started>
 - TDesign Vue Next overview：<https://tdesign.tencent.com/vue-next/overview>
+- TDesign Vue Next MCP：<https://tdesign.tencent.com/vue-next/mcp>
+- TDesign MCP Server：<https://cnb.cool/tencent/tdesign/tdesign-mcp-server>
 - npm 包：<https://www.npmjs.com/package/tdesign-vue-next>
 
 组件索引已经同时对照官网 Vue Next overview 路由和 `tdesign-vue-next@1.20.0` 包内组件目录进行校验。
@@ -61,6 +64,7 @@ Skill is valid!
 
 - TDesign Starter Vue Next setup and project extension
 - TDesign Vue Next component installation, registration, style imports, and icon setup
+- Official TDesign MCP setup and component API lookup workflow
 - Full TDesign Vue Next component index from the official overview
 - Backend-connected UI patterns for CRUD pages, request wrappers, routing, permissions, and loading/error states
 - Complex scenarios such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and theme customization
@@ -72,6 +76,8 @@ The skill is grounded in official TDesign documentation and npm package metadata
 
 - TDesign Starter Vue Next docs: <https://tdesign.tencent.com/starter/docs/vue-next/get-started>
 - TDesign Vue Next overview: <https://tdesign.tencent.com/vue-next/overview>
+- TDesign Vue Next MCP: <https://tdesign.tencent.com/vue-next/mcp>
+- TDesign MCP Server: <https://cnb.cool/tencent/tdesign/tdesign-mcp-server>
 - npm package: <https://www.npmjs.com/package/tdesign-vue-next>
 
 The component index was cross-checked against both the official Vue Next overview routes and `tdesign-vue-next@1.20.0` package component directories.

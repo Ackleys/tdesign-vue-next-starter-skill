@@ -5,6 +5,8 @@ Use this when implementing components, imports, icons, theme, and page compositi
 ## Official Sources Checked
 
 - Component docs overview: https://tdesign.tencent.com/vue-next/overview
+- Official MCP docs: https://tdesign.tencent.com/vue-next/mcp
+- Official MCP server repository: https://cnb.cool/tencent/tdesign/tdesign-mcp-server
 - Official overview static routes checked on 2026-06-02 from `https://static.tdesign.tencent.com/vue-next/assets/index-CNcsvIjg.js`
 - npm package: https://www.npmjs.com/package/tdesign-vue-next
 - npm registry metadata checked on 2026-06-02:
@@ -71,6 +73,8 @@ The official Vue Next overview routes currently include these component docs. Tr
 - Global configuration and assets: `config-provider`, `icon`
 
 When a user asks for a component not listed here, re-check the official overview and installed package before assuming it is unsupported.
+
+If official TDesign MCP is configured, prefer `get-component-list` for availability checks and `get-component-docs` for exact props, events, slots, and examples before implementing unfamiliar component APIs.
 
 ## Component Selection
 

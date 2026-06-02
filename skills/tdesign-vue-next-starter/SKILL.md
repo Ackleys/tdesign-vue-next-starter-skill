@@ -21,6 +21,7 @@ Read the relevant reference before implementation:
 
 - Starter setup and development workflow: `references/starter.md`
 - Component library usage, import styles, and UI implementation rules: `references/vue-next-components.md`
+- Official TDesign MCP setup and tool usage: `references/mcp.md`
 - Admin integration patterns for backend UIs: `references/backend-admin-patterns.md`
 - Complex scenarios and pre-flight checks: `references/advanced-scenarios.md`
 - Validation checklist and scoring rubric: `references/validation.md`
@@ -29,6 +30,8 @@ When the user asks for latest behavior or a component API, browse official sourc
 
 - TDesign Starter Vue Next docs: https://tdesign.tencent.com/starter/docs/vue-next/get-started
 - TDesign Vue Next docs: https://tdesign.tencent.com/vue-next/overview
+- TDesign Vue Next MCP docs: https://tdesign.tencent.com/vue-next/mcp
+- TDesign MCP Server repository: https://cnb.cool/tencent/tdesign/tdesign-mcp-server
 - npm package metadata: https://www.npmjs.com/package/tdesign-vue-next
 
 ## Implementation Workflow
@@ -41,10 +44,11 @@ When the user asks for latest behavior or a component API, browse official sourc
 2. Build the actual work surface first. For admin systems, prioritize dense, scannable operational views over marketing pages.
 3. Use TDesign primitives for controls: `t-table`, `t-form`, `t-input`, `t-select`, `t-button`, `t-dialog`, `t-drawer`, `t-tabs`, `t-card`, `t-space`, `t-pagination`, `t-tag`, `t-alert`, and `t-loading`.
 4. Use `tdesign-icons-vue-next` for icons instead of custom SVGs when an icon exists.
-5. Keep data flow explicit: pages call service modules, services call the project request wrapper, stores hold cross-page state, and components receive props/emits.
-6. Add loading, empty, error, and permission-denied states for backend-driven pages.
-7. Route complex requirements such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and deep theming through `references/advanced-scenarios.md`.
-8. Validate with typecheck, lint, tests, build, and browser smoke checks when available.
+5. When official TDesign MCP is configured, use it before guessing component APIs, available components, DOM structure, or changelog details. See `references/mcp.md`.
+6. Keep data flow explicit: pages call service modules, services call the project request wrapper, stores hold cross-page state, and components receive props/emits.
+7. Add loading, empty, error, and permission-denied states for backend-driven pages.
+8. Route complex requirements such as large tables, remote selects, dynamic forms, async trees, custom uploads, dark mode, and deep theming through `references/advanced-scenarios.md`.
+9. Validate with typecheck, lint, tests, build, and browser smoke checks when available.
 
 ## Install And Initialization Rules
 
