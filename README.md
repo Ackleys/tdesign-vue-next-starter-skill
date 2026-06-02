@@ -1,5 +1,7 @@
 # TDesign Vue Next Starter Skill
 
+[中文说明](README.zh-CN.md)
+
 Codex skill for building Vue 3 interfaces with TDesign Starter and TDesign Vue Next.
 
 ## What It Covers
